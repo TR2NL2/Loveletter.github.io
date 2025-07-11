@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letter</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #f0ece3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        .letter-container {
+            background-color: #fff;
+            width: 210mm;
+            min-height: 297mm;
+            padding: 30mm;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            border: 2px solid #d4a373;
+            position: relative;
+            background-image: linear-gradient(to bottom, rgba(255, 245, 224, 0.3), rgba(255, 245, 224, 0.1));
+        }
+        .letter-header {
+            text-align: right;
+            margin-bottom: 40px;
+            border-bottom: 1px solid #d4a373;
+            padding-bottom: 10px;
+        }
+        .letter-header p {
+            margin: 5px 0;
+            color: #4a3728;
+            font-size: 16px;
+        }
+        .recipient, .subject, .body, .signature {
+            margin-bottom: 20px;
+            color: #2e2e2e;
+            line-height: 1.6;
+        }
+        .recipient p, .subject p {
+            margin: 5px 0;
+            font-size: 16px;
+        }
+        .body p {
+            font-size: 16px;
+            text-align: justify;
+            margin: 10px 0;
+        }
+        .signature p {
+            font-style: italic;
+            font-size: 16px;
+            margin-top: 50px;
+        }
+        .letter-container::before {
+            content: '';
+            position: absolute;
+            top: 10mm;
+            left: 10mm;
+            width: 50px;
+            height: 50px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"><path d="M25 5C15.34 5 7 13.34 7 23s8.34 18 18 18 18-8.34 18-18S34.66 5 25 5zm0 12c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6z" fill="%23d4a373" opacity="0.2"/></svg>') no-repeat;
+        }
+          .download-btn {
+      position: fixed;
+      top: 10px;
+      right: 20px;
+      padding: 10px 20px;
+      background-color: #d4a373;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      font-family: 'Georgia', serif;
+      z-index: 1000;
+    }
+    .download-btn:hover {
+      background-color: #b5895a;
+    }
+
+    @media (max-width: 600px) {
+      .letter-container {
+        padding: 20px;
+      }
+
+      .letter-header p,
+      .recipient p,
+      .subject p,
+      .body p,
+      .signature p {
+        font-size: 14px;
+      }
+
+      .download-btn {
+        font-size: 14px;
+        padding: 8px 16px;
+      }
+    }
+
+    @media print {
+      .download-btn {
+        display: none;
+      }
+      .letter-container {
+        box-shadow: none;
+        border: none;
+      }
+    }
+    </style>
+</head>
+<body>
+    <button class="download-btn" onclick="downloadLetter()">Download as PDF</button>
+    <div class="letter-container">
+        <div class="letter-header">
+            <p>July 11, 2025</p>
+            <p>Neptune</p>
+            <p>Milky Way</p>
+        </div>
+        <div class="recipient">
+            <p>Ms. Numa Limbu</p>
+            <p>Moon, Earth</p>
+            <p>Milky Way </p>
+        </div>
+        <div class="subject">
+            <p>Subject: A Heartfelt Letter</p>
+        </div>
+        <div class="body">
+            <p>Dear Ms. Starlit</p>
+            <p>In the moment of this gloomy night, I have thoughts about my moon. this doesn't let me sleep at night and makes me awake everytime. its not as if I have been infected by a virus but this is more like a charmed.</p>
+            <p>The thoughts of even holding your hand makes my night peaceful. a night is only at peace when your heart is calm and your head of not over active and you make me calm, you make me comfortable and you make my night peaceful. you are THE MOON that spreads her light as referenced to your kindness and I was bound to love every side of your charm.</p>
+            <p>Let us share stories, laughter, and the beauty of the moment, the night when we are together, the place where it doesn't feel lonely and the voice that you'll hear...<br> [The moon is beautiful tonight, isn't it?].</p>
+        </div>
+        <div class="signature">
+            <p>Yours sincerely,</p>
+            <p>Starglint</p>
+        </div>
+    </div>
+
+    <script>
+        function downloadLetter() {
+            window.print();
+        }
+    </script>
+</body>
+</html>
